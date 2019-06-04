@@ -1,0 +1,22 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Noto Sans KR', Helvetica, Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 480px) {
+}
