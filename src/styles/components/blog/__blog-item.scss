@@ -1,0 +1,18 @@
+.blog-item {
+  cursor: pointer;
+}
+.blog-item__img {
+  img {
+    width: 100%;
+  }
+}
+.blog-item__title {
+  padding: 2rem;
+  color: #333;
+  font-size: 1.9rem;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 480px) {
+}

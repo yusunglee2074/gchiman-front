@@ -1,0 +1,18 @@
+.settings {
+  width: 90%;
+  margin: 2rem auto;
+}
+.settings__input {
+  width: 50%;
+}
+.settings__button {
+  margin-top: 1rem;
+}
+.settings__cancel {
+  margin-top: 3rem;
+}
+
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 480px) {
+}
