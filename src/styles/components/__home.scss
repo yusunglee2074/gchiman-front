@@ -1,11 +1,25 @@
 .home {
-  margin: 2rem auto;
+  margin: 0rem auto;
 }
 .home__items {
   width: 95vw;
   margin: 2rem auto;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 960px) {
+  .home__banner {
+    height: 18rem;
+    background-image: url('/banner.png');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 220%;
+  }
 }
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 960px) {
+  .home__banner {
+    height: 25rem;
+    background-image: url('/banner.png');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: auto auto;
+  }
 }

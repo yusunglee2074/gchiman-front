@@ -1,5 +1,5 @@
 .product {
-  max-width: 30rem;
+  text-align: center;
 }
 .product__title {
   text-align: center;
@@ -9,7 +9,6 @@
   margin-bottom: 0.4rem;
 }
 .product__img {
-  max-width: 30rem;
   border: solid 1px rgb(240, 240, 240);
   a {
     img {

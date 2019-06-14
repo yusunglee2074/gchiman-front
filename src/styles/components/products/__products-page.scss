@@ -27,7 +27,10 @@
   padding-left: 1rem;
   cursor: pointer;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 960px) {
+  .product-page__left-category {
+    display: none;
+  }
 }
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 960px) {
 }

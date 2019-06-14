@@ -49,7 +49,7 @@ const ProductPage = ({ match, history }) => {
         }
       </Grid>
       <Grid container>
-        <Grid item xs={3} className="product-page__left-category">
+        <Grid item xs={0} md={3} className="product-page__left-category">
         {
           Object.keys(category).map((cate1, idx) => {
             if (cate1 === '신상품') return void 0
@@ -73,7 +73,7 @@ const ProductPage = ({ match, history }) => {
           })
         }
         </Grid>
-        <Grid item xs={9}>
+        <Grid item xs={12} md={9}>
           { loading ? '정보 가져오는 중' : (
             <ProductList products={products}></ProductList>
           )}

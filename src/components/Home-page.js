@@ -23,8 +23,8 @@ const HomePage = () => {
   }, [])
 
   return (<Grid className="home">
-      <Grid className="home__banner">
-        <img alt="메인배너" src={'/banner.png'} style={{ width: '100%' }} />
+      <Grid className="home__banner" style={{ 
+      }}>
       </Grid>
       <Grid className="home__items">
         {

@@ -23,6 +23,8 @@ const ProductList = (props) => {
           const res = await axios.get('/email/' + email)
           setLikeProducts(res.data.likeProducts)
           setLoading(false)
+        } else {
+          setLoading(false)
         }
       } catch (e) {
         alert('에러')
@@ -100,6 +102,22 @@ const ProductList = (props) => {
             </Grid>
             <Grid item>
               <Button
+                variant={ query === 'under' ? "contained" : 'text' }
+                color="primary"
+                onClick={() => setQuery('under')}>
+                2만원 이하
+              </Button>
+            </Grid>
+            <Grid item>
+              <Button
+                variant={ query === 'random' ? "contained" : 'text' }
+                color="primary"
+                onClick={() => setQuery('random')}>
+                랜덤순서
+              </Button>
+            </Grid>
+            <Grid item style={{ textAlign: 'left' }}>
+              <Button
                 variant={ query === 'price' ? "contained" : 'text' }
                 color="primary"
                 onClick={() => setQuery('price')}>
@@ -139,33 +157,17 @@ const ProductList = (props) => {
                 )
               }
             </Grid>
-            <Grid item>
-              <Button
-                variant={ query === 'under' ? "contained" : 'text' }
-                color="primary"
-                onClick={() => setQuery('under')}>
-                2만원 이하
-              </Button>
-            </Grid>
-            <Grid item>
-              <Button
-                variant={ query === 'random' ? "contained" : 'text' }
-                color="primary"
-                onClick={() => setQuery('random')}>
-                랜덤순서
-              </Button>
-            </Grid>
           </Grid>
         )
       }
       {
-        loading ? '가져오는중' : (<Grid container className="products__list">
+        loading ? '가져오는중' : (<Grid container spacing={3} className="products__list">
           {
             showProducts.map((product, idx) => {
               if (likeProducts.includes(product._id.toString())) {
-                return <Grid item xs={4} className="products__list__item" key={idx}><ProductItem product={product} like={true}></ProductItem></Grid>
+                return <Grid item xs={12} sm={4} className="products__list__item" key={idx}><ProductItem product={product} like={true}></ProductItem></Grid>
               }
-              else return <Grid item xs={4} className="products__list__item" key={idx}><ProductItem product={product} like={false}></ProductItem></Grid>
+              else return <Grid item xs={12} sm={4} className="products__list__item" key={idx}><ProductItem product={product} like={false}></ProductItem></Grid>
             })
           }</Grid>)
       }
