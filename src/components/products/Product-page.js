@@ -14,7 +14,11 @@ const ProductPage = ({ match, history }) => {
 
   useEffect(() => {
     getProducts()
-  }, [openCate, subCate])
+  }, [])
+
+  useEffect(() => {
+    getProducts()
+  }, [openCate, subCate, match.params.cate1, match.params.cate2])
 
   const getProducts = async () => {
     setLoading(true)
