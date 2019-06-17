@@ -6,7 +6,7 @@ import './styles/styles.scss'
 import 'normalize.css/normalize.css'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';  
 
-axios.defaults.baseURL = 'http://localhost:3000';
+axios.defaults.baseURL = 'http://27.35.42.115:3000';
 
 const theme = createMuiTheme({
   typography: { 
@@ -21,4 +21,3 @@ const theme = createMuiTheme({
 ReactDOM.render(<MuiThemeProvider theme={theme}>
   <AppRouter />
   </MuiThemeProvider>, document.getElementById('root'));
-

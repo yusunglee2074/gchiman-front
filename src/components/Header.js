@@ -32,7 +32,6 @@ const Header = ({ history }) => {
     const distanceY = window.pageYOffset || document.documentElement.scrollTop
     const shrinkOn = 200
     const headerEl = document.getElementById("js-header")
-    console.log(distanceY)
       /*
 
     if (distanceY > shrinkOn) {
@@ -49,8 +48,9 @@ const Header = ({ history }) => {
   const emailMenuOpen = (e) => {
     setToggleEmailMenu(e.currentTarget)
   }
-  const menuClose = (e) => {
+  const menuClose = (where) => {
     setToggleMenu(null)
+    history.push('/' + where)
   }
   const emailMenuClose = (e) => {
     setToggleEmailMenu(null)
@@ -71,7 +71,6 @@ const Header = ({ history }) => {
     storage.setItem('email', email)
     try {
       const response = await axios.post('/emails', { email })
-      console.log(response)
     } catch (e) {
       alert('에러')
     }
@@ -203,8 +202,8 @@ const Header = ({ history }) => {
               vertical: 'bottom',
               horizontal: 'center'
             }}>
-            <MenuItem onClick={menuClose}>랜덤물품</MenuItem>
-            <MenuItem onClick={menuClose}>운영자문의</MenuItem>
+            <MenuItem onClick={() => menuClose('신상품')}>랜덤물품</MenuItem>
+            <MenuItem onClick={() => menuClose('문의하기')}>운영자문의</MenuItem>
           </Menu>
         </Grid>
       </Hidden>

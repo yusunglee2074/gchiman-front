@@ -33,10 +33,12 @@ const AdminBlog = ({ history }) => {
     getBlogs()
   }, [])
 
+    /*
   useEffect(() => {
     const rawContentState = convertToRaw(editorState.getCurrentContent())
     setBlog({ ...blog, text: draftToHtml(rawContentState) })
   }, [editorState])
+  */
 
   const postImage = async (e) => {
     const data = new FormData()
@@ -133,7 +135,14 @@ const AdminBlog = ({ history }) => {
         type="file"
         margin="normal"
       ></TextField>
+      <TextField
+        label="본문"
+        value={blog.text}
+        onChange={(e) => setBlog({ ...blog, text: e.target.value})}
+        margin="normal"
+      ></TextField>
       <img style={{ width: 80 }} alt='메인 이미지' src={blog.image}/>
+      {/*
       <Editor
         editorState={editorState}
         wrapperClassName="wrapper-class"
@@ -142,6 +151,7 @@ const AdminBlog = ({ history }) => {
         onEditorStateChange={onEditorStateChange}
         toolbar={toolbar}
       ></Editor>
+      */}
       <Button onClick={saveBlog}>{ blog._id ? '수정하기' : '글쓰기' }</Button>
       <Grid>
         <h2>블로그 목록</h2>
