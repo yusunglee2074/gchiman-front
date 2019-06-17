@@ -108,6 +108,9 @@ const Header = ({ history }) => {
       onKeyDown={toggleDrawer(false)}
     >
         <List>
+            <ListItem onClick={() => history.push('/' + '블로그')} button key={'선택장애'}>
+              <ListItemText primary={'선택장애'} />
+            </ListItem>
           {Object.keys(category).map((text, index) => (
             <ListItem onClick={() => history.push('/' + (text === '선택장애' ? '블로그' : text))} button key={text}>
               <ListItemText primary={text} />
@@ -122,6 +125,7 @@ const Header = ({ history }) => {
                   <ListItemText primary={'로그아웃'} />
                 </ListItem>
               )
+              if (!email && text === '좋아요 누른 상품들') return void 0
               return (
                 <ListItem onClick={() => {
                   if (text === '이메일 구독') return setIsModalOpen(true)
