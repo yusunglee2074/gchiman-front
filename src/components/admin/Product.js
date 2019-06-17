@@ -33,7 +33,7 @@ const AdminProduct = ({ history }) => {
   }
   const postProduct = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/products', product) 
+      const response = await axios.post('/products', product) 
     } catch(e) {
       alert('에러')
     }

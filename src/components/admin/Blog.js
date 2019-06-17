@@ -24,7 +24,7 @@ const AdminBlog = ({ history }) => {
   useEffect(() => {
     const getBlogs = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/blogs') 
+        const response = await axios.get('/blogs') 
         setBlogs(response.data)
       } catch (e) {
         alert('에러')
@@ -92,10 +92,10 @@ const AdminBlog = ({ history }) => {
     try {
       let response
       if (blog._id) {
-        response = await axios.patch('http://localhost:3000/blog/' + blog._id, blog) 
+        response = await axios.patch('/blog/' + blog._id, blog) 
       } else {
         delete blog._id
-        response = await axios.post('http://localhost:3000/blogs', blog) 
+        response = await axios.post('/blogs', blog) 
       }
       if (response.status === 201) alert('성공')
       else console.log(response)

@@ -12,7 +12,7 @@ const BlogList = () => {
   useEffect(() => {
     const getBlogs = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/blogs') 
+        const response = await axios.get('/blogs') 
         let tempObj = {}
         response.data.map((blog, idx) => {
           if (tempObj[blog.category]) {
